@@ -5,25 +5,27 @@ struct MovieView: View {
     let imageURL = "https://image.tmdb.org/t/p/original/"
 
     var body: some View {
-        AsyncImage(url: URL(string: imageURL + (movieInfo.poster_path ?? ""))) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-                    .frame(width: 120, height: 180)
-            case .success(let image):
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 120, height: 180)
-                    .cornerRadius(8)
-            case .failure:
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 120, height: 180)
-                    .foregroundColor(.gray)
-            @unknown default:
-                EmptyView()
+        ZStack {
+            
+            AsyncImage(url: URL(string: imageURL + (movieInfo.poster_path ?? ""))) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 120, height: 180)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .cornerRadius(8)
+                case .failure:
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 180)
+                        .foregroundColor(.gray)
+                @unknown default:
+                    EmptyView()
+                }
             }
         }
     }
