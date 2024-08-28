@@ -74,6 +74,7 @@
 		CEC9B62F2C7FB9A4007B43FA /* MoviEmotion */ = {
 			isa = PBXGroup;
 			children = (
+				CEC9B6572C7FBA9D007B43FA /* MovieView.swift */,
 				CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */,
 				CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */,
 				CEC9B6462C7FB9B3007B43FA /* CategoriesViewModel.swift */,
@@ -89,7 +90,6 @@
 				CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */,
 				CEC9B6362C7FB9A5007B43FA /* MoviEmotion.entitlements */,
 				CEC9B6372C7FB9A5007B43FA /* Preview Content */,
-				CEC9B6572C7FBA9D007B43FA /* MovieView.swift */,
 			);
 			path = MoviEmotion;
 			sourceTree = "<group>";

@@ -19,26 +19,28 @@ struct RecommendationView: View {
                 
                 
                 if let firstMovie = viewModel.movies.first {
-                    AsyncImage(url: URL(string: imageURL + (firstMovie.poster_path ?? ""))) { phase in
-                        switch phase {
-                        case .empty:
-                            ProgressView()
-                                .frame(height: 400)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxHeight: 540)
-                                .cornerRadius(20)
-                        case .failure:
-                            Image(systemName: "photo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 400)
-                                .foregroundColor(.gray)
-                                .ignoresSafeArea(edges: .top)
-                        @unknown default:
-                            EmptyView()
+                    NavigationLink(destination: MovieView(movieInfo: firstMovie)) {
+                        AsyncImage(url: URL(string: imageURL + (firstMovie.poster_path ?? ""))) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView()
+                                    .frame(height: 400)
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxHeight: 540)
+                                    .cornerRadius(20)
+                            case .failure:
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 400)
+                                    .foregroundColor(.gray)
+                                    .ignoresSafeArea(edges: .top)
+                            @unknown default:
+                                EmptyView()
+                            }
                         }
                     }
                       
@@ -53,7 +55,7 @@ struct RecommendationView: View {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(viewModel.movies.dropFirst(), id: \.title) { movie in
-                            VStack {
+                            NavigationLink(destination: MovieView(movieInfo: movie)) {
                                 AsyncImage(url: URL(string: imageURL + (movie.poster_path ?? ""))) { phase in
                                     switch phase {
                                     case .empty:
