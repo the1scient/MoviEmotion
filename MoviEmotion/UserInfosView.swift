@@ -52,20 +52,21 @@ struct UserInfosView: View {
             
                 Spacer()
                     .frame(height: 30)
-        
-                if nome != "" && dataNascimento != Date.now {
+
                     NavigationLink(destination: FeelingView()){
                         Text("Concluir")
                     }
+                    .disabled(nome == "")
+                    .disabled(dataNascimento == Date.now)
+        
                     .padding(.horizontal, 140)
                     .padding(.vertical, 10)
                     .foregroundColor(.white)
-                    .background(.black)
+                    .background(.gray)
                     .cornerRadius(20)
             
                     Spacer()
                         .frame(height: 30)
-            }
         }
     }
 
