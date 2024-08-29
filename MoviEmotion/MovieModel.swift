@@ -11,4 +11,5 @@ struct Movie: Codable, Identifiable {
     let release_date: String
     let poster_path: String?
     let backdrop_path: String?
+    let overview: String
 }

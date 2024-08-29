@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */; };
 		CEC9B6352C7FB9A5007B43FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */; };
 		CEC9B6392C7FB9A5007B43FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9B6382C7FB9A5007B43FA /* Preview Assets.xcassets */; };
-		CEC9B64B2C7FB9B3007B43FA /* MoviEmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B63F2C7FB9B3007B43FA /* MoviEmotionApp.swift */; };
 		CEC9B64C2C7FB9B3007B43FA /* UserInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6402C7FB9B3007B43FA /* UserInfosView.swift */; };
 		CEC9B64D2C7FB9B3007B43FA /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */; };
 		CEC9B64E2C7FB9B3007B43FA /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */; };
@@ -25,11 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviEmotionApp.swift; sourceTree = "<group>"; };
 		CEC9B62D2C7FB9A4007B43FA /* MoviEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC9B6362C7FB9A5007B43FA /* MoviEmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoviEmotion.entitlements; sourceTree = "<group>"; };
 		CEC9B6382C7FB9A5007B43FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CEC9B63F2C7FB9B3007B43FA /* MoviEmotionApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviEmotionApp.swift; path = ../../../Documents/moviemotion/MoviEmotion/MoviEmotionApp.swift; sourceTree = "<group>"; };
 		CEC9B6402C7FB9B3007B43FA /* UserInfosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfosView.swift; sourceTree = "<group>"; };
 		CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
@@ -81,7 +81,6 @@
 				CEC9B6492C7FB9B3007B43FA /* DecisionView.swift */,
 				CEC9B6472C7FB9B3007B43FA /* FeelingView.swift */,
 				CEC9B6432C7FB9B3007B43FA /* MovieModel.swift */,
-				CEC9B63F2C7FB9B3007B43FA /* MoviEmotionApp.swift */,
 				CEC9B6442C7FB9B3007B43FA /* MovieViewModel.swift */,
 				CEC9B6482C7FB9B3007B43FA /* RecommendationView.swift */,
 				CEC9B6402C7FB9B3007B43FA /* UserInfosView.swift */,
@@ -90,6 +89,7 @@
 				CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */,
 				CEC9B6362C7FB9A5007B43FA /* MoviEmotion.entitlements */,
 				CEC9B6372C7FB9A5007B43FA /* Preview Content */,
+				54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */,
 			);
 			path = MoviEmotion;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */,
 				CEC9B64F2C7FB9B3007B43FA /* MovieModel.swift in Sources */,
-				CEC9B64B2C7FB9B3007B43FA /* MoviEmotionApp.swift in Sources */,
 				CEC9B6552C7FB9B3007B43FA /* DecisionView.swift in Sources */,
 				CEC9B6522C7FB9B3007B43FA /* CategoriesViewModel.swift in Sources */,
 				CEC9B6502C7FB9B3007B43FA /* MovieViewModel.swift in Sources */,
@@ -314,7 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoviEmotion/Preview Content\"";
-				DEVELOPMENT_TEAM = ZUG6CNLA9K;
+				DEVELOPMENT_TEAM = GL239H9337;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -352,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoviEmotion/Preview Content\"";
-				DEVELOPMENT_TEAM = ZUG6CNLA9K;
+				DEVELOPMENT_TEAM = GL239H9337;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
