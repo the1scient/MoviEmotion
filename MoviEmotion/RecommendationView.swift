@@ -48,7 +48,7 @@ struct RecommendationView: View {
                 }
                 .sheet(item: $selectedMovie) { movie in
                     MovieView(movieInfo: movie)
-                        .id(UUID()) // Forces a fresh load of the view
+                        .id(UUID())
                 }
 
 
@@ -57,7 +57,7 @@ struct RecommendationView: View {
 
             Spacer()
             Text("Outras recomendações:")
-                .font(.caption2)
+                .font(.caption)
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()

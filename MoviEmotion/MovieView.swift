@@ -122,15 +122,10 @@ struct MovieView: View {
             }
             .background(Color.black)
             
-            // Close button (X symbol)
             Button(action: {
                 dismiss()
             }) {
-                Image(systemName: "xmark.circle.fill")
-                    .resizable()
-                    .frame(width: 24, height: 24)
-                    .foregroundColor(.white)
-                    .padding([.top, .trailing], 16)
+                Text("OK").foregroundColor(.white).padding(.trailing, 20).padding(.top, 15)
             }
         }
     }
