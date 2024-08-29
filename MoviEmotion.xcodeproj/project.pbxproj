@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */; };
+		CE4B59082C810FC200D0A4B5 /* ClassificacaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */; };
+		CE4B590A2C81100C00D0A4B5 /* ClassificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */; };
 		CEC9B6352C7FB9A5007B43FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */; };
 		CEC9B6392C7FB9A5007B43FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9B6382C7FB9A5007B43FA /* Preview Assets.xcassets */; };
 		CEC9B64C2C7FB9B3007B43FA /* UserInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6402C7FB9B3007B43FA /* UserInfosView.swift */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviEmotionApp.swift; sourceTree = "<group>"; };
+		CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificacaoViewModel.swift; sourceTree = "<group>"; };
+		CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationModel.swift; sourceTree = "<group>"; };
 		CEC9B62D2C7FB9A4007B43FA /* MoviEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC9B6362C7FB9A5007B43FA /* MoviEmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoviEmotion.entitlements; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		CEC9B62F2C7FB9A4007B43FA /* MoviEmotion */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */,
+				CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */,
 				CEC9B6572C7FBA9D007B43FA /* MovieView.swift */,
 				CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */,
 				CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */,
@@ -172,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4B59082C810FC200D0A4B5 /* ClassificacaoViewModel.swift in Sources */,
 				54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */,
 				CEC9B64F2C7FB9B3007B43FA /* MovieModel.swift in Sources */,
 				CEC9B6552C7FB9B3007B43FA /* DecisionView.swift in Sources */,
@@ -181,6 +188,7 @@
 				CEC9B64E2C7FB9B3007B43FA /* CategoriesModel.swift in Sources */,
 				CEC9B6532C7FB9B3007B43FA /* FeelingView.swift in Sources */,
 				CEC9B6582C7FBA9D007B43FA /* MovieView.swift in Sources */,
+				CE4B590A2C81100C00D0A4B5 /* ClassificationModel.swift in Sources */,
 				CEC9B64D2C7FB9B3007B43FA /* CategoriesView.swift in Sources */,
 				CEC9B6562C7FB9B3007B43FA /* WantToFeelView.swift in Sources */,
 				CEC9B64C2C7FB9B3007B43FA /* UserInfosView.swift in Sources */,
@@ -314,7 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoviEmotion/Preview Content\"";
-				DEVELOPMENT_TEAM = GL239H9337;
+				DEVELOPMENT_TEAM = ZUG6CNLA9K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -333,7 +341,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fabbri.MoviEmotion;
+				PRODUCT_BUNDLE_IDENTIFIER = guilherme.fabbri.MoviEmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -352,7 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MoviEmotion/Preview Content\"";
-				DEVELOPMENT_TEAM = GL239H9337;
+				DEVELOPMENT_TEAM = ZUG6CNLA9K;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -371,7 +379,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fabbri.MoviEmotion;
+				PRODUCT_BUNDLE_IDENTIFIER = guilherme.fabbri.MoviEmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

@@ -5,7 +5,7 @@ struct MovieResponse: Codable {
 }
 
 struct Movie: Codable, Identifiable {
-    let id = UUID()  // Add this line to conform to Identifiable
+    let id: Int  // This is the movie's unique ID from the API
     let title: String
     let original_title: String
     let release_date: String

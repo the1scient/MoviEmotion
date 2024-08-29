@@ -11,7 +11,7 @@ import SwiftUI
 struct MoviEmotionApp: App {
     var body: some Scene {
         WindowGroup {
-            FeelingView()
+            WelcomeView()
         }
     }
 }

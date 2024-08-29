@@ -1,13 +1,20 @@
 import SwiftUI
 
 struct MovieView: View {
+    @Environment(\.dismiss) var dismiss  // To dismiss the sheet
     @State var movieInfo: Movie
+    @StateObject private var classificationViewModel: ClassificationViewModel
+    
     let imageURL = "https://image.tmdb.org/t/p/original/"
 
+    init(movieInfo: Movie) {
+        _movieInfo = State(wrappedValue: movieInfo)
+        _classificationViewModel = StateObject(wrappedValue: ClassificationViewModel(movieId: movieInfo.id))
+    }
+    
     var body: some View {
-
-            ZStack {
-                ScrollView {
+        ZStack(alignment: .topTrailing) {
+            ScrollView {
                 GeometryReader { geometry in
                     // Imagem de Fundo no Topo
                     AsyncImage(url: URL(string: imageURL + (movieInfo.backdrop_path ?? ""))) { phase in
@@ -65,12 +72,32 @@ struct MovieView: View {
                         .padding(.top, 10)
                         .multilineTextAlignment(.center)
                     
+                    // Classificação - Centralizada
+                    Text("Classificação: \(classificationViewModel.classification)")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 10)
+                    
                     // Imagem - Centralizada
-                    AsyncImage(url: URL(string: "https://images.unsplash.com/photo-1619431843897-4676bff0c286?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")){
-                        image in
-                        image.image?.resizable()
-                            .frame(width: 66, height: 66)
-                            .cornerRadius(5)
+                    AsyncImage(url: URL(string: "https://images.unsplash.com/photo-1619431843897-4676bff0c286?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(width: 66, height: 66)
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .frame(width: 66, height: 66)
+                                .cornerRadius(5)
+                        case .failure:
+                            Image(systemName: "photo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 66, height: 66)
+                                .foregroundColor(.gray)
+                        @unknown default:
+                            EmptyView()
+                        }
                     }
                     .padding(.bottom)
                     
@@ -94,6 +121,17 @@ struct MovieView: View {
                 }
             }
             .background(Color.black)
+            
+            // Close button (X symbol)
+            Button(action: {
+                dismiss()
+            }) {
+                Image(systemName: "xmark.circle.fill")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(.white)
+                    .padding([.top, .trailing], 16)
+            }
         }
     }
 
@@ -101,11 +139,11 @@ struct MovieView: View {
         let components = dateString.split(separator: "-")
         return components.first.map(String.init) ?? ""
     }
-
 }
 
 #Preview {
     MovieView(movieInfo: Movie(
+        id: 12345,  // Example movie ID from TMDb
         title: "DivertidaMente 2",
         original_title: "Inside Out 2",
         release_date: "2024-06-14",
@@ -113,4 +151,6 @@ struct MovieView: View {
         backdrop_path: "/3q01ACG0MWm0DekhvkPFCXyPZSu.jpg",
         overview: "Divertida Mente 2, da Disney e da Pixar, retorna à mente da adolescente Riley, e o faz no momento em que a sala de comando está passando por uma demolição repentina para dar lugar a algo totalmente inesperado: novas emoções! Alegria, Tristeza, Raiva, Medo e Nojinho não sabem bem como reagir quando Ansiedade aparece, e tudo indica que ela não está sozinha"
     ))
+
+
 }
