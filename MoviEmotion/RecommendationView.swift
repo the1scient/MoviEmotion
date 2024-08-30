@@ -15,10 +15,12 @@ struct RecommendationView: View {
 
     var body: some View {
         VStack {
-            Text("Recomendados para \(nomeUsuario)")
-                .font(.system(size: 15, weight: .semibold))
-                .frame(alignment: .leading)
-                .padding(.vertical, 10)
+            HStack{
+                Text("Para \(nomeUsuario)")
+                    .font(.system(size: 25)).bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(10)
+            }
 
             if let firstMovie = viewModel.movies.first {
                 Button(action: {
