@@ -89,13 +89,7 @@ struct MovieView: View {
                         .foregroundColor(.white)
                         .padding(.top, 10)
                         .multilineTextAlignment(.center)
-                    
-                    // Classificação - Centralizada
-                    Text("Classificação: \(classificationViewModel.classification)")
-                        .font(.subheadline)
-                        .foregroundColor(.white)
-                        .padding(.bottom, 10)
-                    
+
                     // Imagem - Centralizada
                     AsyncImage(url: URL(string: "\(classificationURL)")) { phase in
                         switch phase {

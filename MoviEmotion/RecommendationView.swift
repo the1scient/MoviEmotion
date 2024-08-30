@@ -4,7 +4,9 @@ struct RecommendationView: View {
     @StateObject private var viewModel: MovieViewModel
     @State private var showSheet = false
     @State private var selectedMovie: Movie?
+    @AppStorage("NOME_USUARIO") var nomeUsuario: String = ""
 
+    
     init(categorie: String) {
         _viewModel = StateObject(wrappedValue: MovieViewModel(categorie: "\(categorie)"))
     }
@@ -13,7 +15,7 @@ struct RecommendationView: View {
 
     var body: some View {
         VStack {
-            Text("Recomendados para nome da pessoa")
+            Text("Recomendados para \(nomeUsuario)")
                 .font(.system(size: 15, weight: .semibold))
                 .frame(alignment: .leading)
                 .padding(.vertical, 10)
