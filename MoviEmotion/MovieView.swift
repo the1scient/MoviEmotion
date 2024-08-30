@@ -11,6 +11,24 @@ struct MovieView: View {
         _movieInfo = State(wrappedValue: movieInfo)
         _classificationViewModel = StateObject(wrappedValue: ClassificationViewModel(movieId: movieInfo.id))
     }
+     private var classificationURL: String {
+         switch classificationViewModel.classification.lowercased() {
+         case "l":
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/l-auto.png/@@images/image"
+         case "10":
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr10-auto.png/@@images/image"
+         case "12":
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr12-auto.png/@@images/image"
+         case "14":
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr14-auto.png/@@images/image"
+         case "16":
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr16-auto.png/@@images/image"
+         case "18":
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr18-auto.png/@@images/image"
+         default:
+             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/l-auto.png/@@images/image"
+         }
+     }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -79,7 +97,7 @@ struct MovieView: View {
                         .padding(.bottom, 10)
                     
                     // Imagem - Centralizada
-                    AsyncImage(url: URL(string: "https://images.unsplash.com/photo-1619431843897-4676bff0c286?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")) { phase in
+                    AsyncImage(url: URL(string: "\(classificationURL)")) { phase in
                         switch phase {
                         case .empty:
                             ProgressView()
