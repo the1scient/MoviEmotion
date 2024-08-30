@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541B94D72C82449000E947D6 /* WatchProvidersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541B94D62C82449000E947D6 /* WatchProvidersModel.swift */; };
+		541B94D92C82464800E947D6 /* WatchProvidersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541B94D82C82464800E947D6 /* WatchProvidersViewModel.swift */; };
 		54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */; };
 		CE4B59082C810FC200D0A4B5 /* ClassificacaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */; };
 		CE4B590A2C81100C00D0A4B5 /* ClassificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541B94D62C82449000E947D6 /* WatchProvidersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProvidersModel.swift; sourceTree = "<group>"; };
+		541B94D82C82464800E947D6 /* WatchProvidersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProvidersViewModel.swift; sourceTree = "<group>"; };
 		54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviEmotionApp.swift; sourceTree = "<group>"; };
 		CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificacaoViewModel.swift; sourceTree = "<group>"; };
 		CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationModel.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				CEC9B6362C7FB9A5007B43FA /* MoviEmotion.entitlements */,
 				CEC9B6372C7FB9A5007B43FA /* Preview Content */,
 				54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */,
+				541B94D62C82449000E947D6 /* WatchProvidersModel.swift */,
+				541B94D82C82464800E947D6 /* WatchProvidersViewModel.swift */,
 			);
 			path = MoviEmotion;
 			sourceTree = "<group>";
@@ -185,9 +191,11 @@
 				CEC9B6522C7FB9B3007B43FA /* CategoriesViewModel.swift in Sources */,
 				CEC9B6502C7FB9B3007B43FA /* MovieViewModel.swift in Sources */,
 				CEC9B6512C7FB9B3007B43FA /* WelcomeView.swift in Sources */,
+				541B94D92C82464800E947D6 /* WatchProvidersViewModel.swift in Sources */,
 				CEC9B64E2C7FB9B3007B43FA /* CategoriesModel.swift in Sources */,
 				CEC9B6532C7FB9B3007B43FA /* FeelingView.swift in Sources */,
 				CEC9B6582C7FBA9D007B43FA /* MovieView.swift in Sources */,
+				541B94D72C82449000E947D6 /* WatchProvidersModel.swift in Sources */,
 				CE4B590A2C81100C00D0A4B5 /* ClassificationModel.swift in Sources */,
 				CEC9B64D2C7FB9B3007B43FA /* CategoriesView.swift in Sources */,
 				CEC9B6562C7FB9B3007B43FA /* WantToFeelView.swift in Sources */,

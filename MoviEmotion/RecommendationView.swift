@@ -14,7 +14,7 @@ struct RecommendationView: View {
     var body: some View {
         VStack {
             Text("Recomendados para nome da pessoa")
-                .font(.system(size: 15, weight: .semibold))
+                .font(.headline)
                 .frame(alignment: .leading)
                 .padding(.vertical, 10)
 
@@ -57,8 +57,8 @@ struct RecommendationView: View {
 
             Spacer()
             Text("Outras recomendações:")
-                .font(.caption)
-                .padding(.horizontal)
+                .font(.system(size: 15,weight: .semibold))
+                .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
 
