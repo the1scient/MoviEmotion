@@ -21,44 +21,48 @@ struct WantToFeelView: View {
     ]
     
     var body: some View {
-            VStack {
-                Spacer().frame(height: 60)
-                
-                Text("Oque você quer sentir?")
-                    .font(.system(size: 25)).bold()
-                
-                Spacer().frame(height: 40)
-                
-                VStack(spacing: 20) {
-                    // Criando os botões com diferentes sentimentos, gêneros e IDs
-                    ForEach(0..<3) { row in
-                        HStack(spacing: 20) {
-                            ForEach(0..<3) { col in
-                                let index = row * 3 + col
-                                VStack {
-                                    Text(emotions[index].name)
-                                        .bold()
-                                    
-                                    NavigationLink(destination: RecommendationView(categorie: emotions[index].id)) {
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .fill(LinearGradient(
-                                                gradient: Gradient(colors: [emotions[index].startColor, emotions[index].endColor]),
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
-                                            ))
-                                            .frame(width: 100, height: 150)
-                                    }
+        VStack {
+            
+            Spacer().frame(height: 50)
+            
+            Text("O que você\n quer sentir?")
+                .font(.system(size: 25))
+                .bold()
+                .multilineTextAlignment(.center)
+            
+            Spacer().frame(height: 80)
+            
+            VStack() {
+                // Criando os botões com diferentes sentimentos, gêneros e IDs
+                ForEach(0..<3) { row in
+                    HStack(spacing: 20) {
+                        ForEach(0..<3) { col in
+                            let index = row * 3 + col
+                            VStack {
+                                Text(emotions[index].name)
+                                    .bold().font(.system(size: 16))
+                                    .padding(-15)
+                                
+                                NavigationLink(destination: RecommendationView(categorie: emotions[index].id)) {
+                                    Circle()
+                                        .fill(LinearGradient(
+                                            gradient: Gradient(colors: [emotions[index].startColor, emotions[index].endColor]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        ))
+                                        .frame(width: 100, height: 150)
                                 }
                             }
                         }
                     }
                 }
-                
-                Spacer()
             }
-
+            
+            Spacer()
         }
+
     }
+}
 
 #Preview {
     WantToFeelView()

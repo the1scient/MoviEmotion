@@ -2,63 +2,62 @@ import SwiftUI
 
 struct DecisionView: View {
     var body: some View {
-
-        
-        NavigationView(content: {
+        NavigationView {
             VStack {
-                Text("Recomendações a partir de:")
+                Text("Recomendações \na partir de:")
                     .font(.system(size: 25))
                     .bold()
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
                     .frame(maxHeight: 100)
                 
                 HStack {
-                    // Navigations para Humor Atual e Quero me Sentir
+                    // Navegação para Humor Atual
                     NavigationLink(destination: FeelingView()) {
                         VStack {
                             Text("Humor Atual")
-                            AsyncImage(url: URL(string: "https://images.unsplash.com/photo-1619431843897-4676bff0c286?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")){
-                                image in
-                                image.image?.resizable()
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [Color(red: 204/255, green: 0, blue: 0), Color(red: 102/255, green: 0, blue: 0)]),
+                                            startPoint: .top,
+                                            endPoint: .bottom
+                                        )
+                                    )
                                     .frame(width: 150, height: 250)
-                                    .cornerRadius(20)
-                                
+                                Image("Feeling").resizable().frame(width: 104, height: 127)
                             }
                         }
-                        
                     }
                     .buttonStyle(PlainButtonStyle())
                     
                     Spacer()
                         .frame(width: 40)
+                    
+                    // Navegação para Quero me Sentir
                     NavigationLink(destination: WantToFeelView()) {
-                        
-                        
                         VStack {
                             Text("Quero me sentir")
-                            
-                            
-                            AsyncImage(url: URL(string: "https://images.unsplash.com/photo-1619431843897-4676bff0c286?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")){
-                                image in
-                                image.image?.resizable()
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [Color(red: 102/255, green: 0, blue: 0), Color(red: 204/255, green: 0, blue: 0)]),
+                                            startPoint: .top,
+                                            endPoint: .bottom
+                                        )
+                                    )
                                     .frame(width: 150, height: 250)
-                                    .cornerRadius(20)
-                                
-                                
+                                Image("WantToFeel").resizable().frame(width: 92, height: 130)
                             }
-                            
                         }
-                        
-                        
-                        
                     }
                     .buttonStyle(PlainButtonStyle())
-                    
                 }
             }
-        })
-        
+        }
     }
 }
 

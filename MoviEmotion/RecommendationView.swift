@@ -4,7 +4,7 @@ struct RecommendationView: View {
     @StateObject private var viewModel: MovieViewModel
     @State private var showSheet = false
     @State private var selectedMovie: Movie?
-    @AppStorage("NOME_USUARIO") var nomeUsuario: String = "você "
+    @AppStorage("NOME_USUARIO") var nomeUsuario: String = ""
 
     
     init(categorie: String) {
@@ -17,9 +17,11 @@ struct RecommendationView: View {
         VStack {
             HStack{
                 Text("Para \(nomeUsuario)")
-                    .font(.system(size: 25)).bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(10)
+                    .font(.system(size: 25))
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
+                    .padding()
+                    .padding(.horizontal, 5)
             }
 
             if let firstMovie = viewModel.movies.first {
@@ -64,6 +66,7 @@ struct RecommendationView: View {
                 .font(.system(size: 15,weight: .semibold))
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 4)
             Spacer()
 
             ScrollView(.horizontal) {

@@ -25,15 +25,17 @@ struct FeelingView: View {
     
     var body: some View {
             VStack {
-                Spacer().frame(height: 60)
                 
-                Text("O que você está sentindo?")
-                    .font(.system(size: 25)).bold()
-                    .foregroundColor(.white)
+                Spacer().frame(height: 50)
                 
-                Spacer().frame(height: 40)
+                Text("O que você\n está sentindo?")
+                    .font(.system(size: 25))
+                    .bold()
+                    .multilineTextAlignment(.center)
                 
-                VStack(spacing: 20) {
+                Spacer().frame(height: 80)
+                
+                VStack() {
                     // Criando os botões com diferentes sentimentos, gêneros e IDs
                     ForEach(0..<3) { row in
                         HStack(spacing: 20) {
@@ -41,10 +43,11 @@ struct FeelingView: View {
                                 let index = row * 3 + col
                                 VStack {
                                     Text(emotions[index].name)
-                                        .bold()
+                                        .bold().font(.system(size: 16))
+                                        .padding(-15)
                                     
                                     NavigationLink(destination: RecommendationView(categorie: emotions[index].id)) {
-                                        RoundedRectangle(cornerRadius: 20)
+                                        Circle()
                                             .fill(LinearGradient(
                                                 gradient: Gradient(colors: [emotions[index].startColor, emotions[index].endColor]),
                                                 startPoint: .topLeading,
