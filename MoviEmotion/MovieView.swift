@@ -131,27 +131,29 @@ struct MovieView: View {
                             .fontWeight(.bold)
                         
                         if let providers = watchProvidersViewModel.watchProviders {
-                            HStack(alignment: .center) {
-                                ForEach(providers.flatrate ?? [], id: \.provider_id) { provider in
-                                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(provider.logo_path ?? "")")) { phase in
-                                        switch phase {
-                                        case .empty:
-                                            ProgressView()
-                                                .frame(width: 40, height: 40)
-                                        case .success(let image):
-                                            image
-                                                .resizable()
-                                                .frame(width: 60, height: 60)
-                                                .cornerRadius(5)
-                                                .padding(.horizontal, 10)
-                                        case .failure:
-                                            Image(systemName: "photo")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 40, height: 40)
-                                                .foregroundColor(.gray)
-                                        @unknown default:
-                                            EmptyView()
+                            ScrollView(.horizontal) {
+                                HStack(alignment: .center) {
+                                    ForEach(providers.flatrate ?? [], id: \.provider_id) { provider in
+                                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(provider.logo_path ?? "")")) { phase in
+                                            switch phase {
+                                            case .empty:
+                                                ProgressView()
+                                                    .frame(width: 40, height: 40)
+                                            case .success(let image):
+                                                image
+                                                    .resizable()
+                                                    .frame(width: 60, height: 60)
+                                                    .cornerRadius(5)
+                                                    .padding(.horizontal, 10)
+                                            case .failure:
+                                                Image(systemName: "photo")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 40, height: 40)
+                                                    .foregroundColor(.gray)
+                                            @unknown default:
+                                                EmptyView()
+                                            }
                                         }
                                     }
                                 }

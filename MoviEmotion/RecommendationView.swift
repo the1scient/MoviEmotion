@@ -4,7 +4,7 @@ struct RecommendationView: View {
     @StateObject private var viewModel: MovieViewModel
     @State private var showSheet = false
     @State private var selectedMovie: Movie?
-    @AppStorage("NOME_USUARIO") var nomeUsuario: String = ""
+    @AppStorage("NOME_USUARIO") var nomeUsuario: String = "você "
 
     
     init(categorie: String) {
