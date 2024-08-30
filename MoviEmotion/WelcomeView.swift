@@ -1,67 +1,76 @@
+//
+//  WelcomeView.swift
+//  MoviEmotion
+//
+//  Created by MARIA MERCEDES DA SILVA RODRIGUES on 28/08/24.
+//
+
 import SwiftUI
 
-struct Opcao: Identifiable {
-    let id = UUID()
-    let texto: String
-    var marcado: Bool
-}
-
 struct WelcomeView: View {
-    @State private var opcoes = [
-        Opcao(texto: "Termos de Uso", marcado: false),
-        Opcao(texto: "Termos de Privacidade", marcado: false)
-    ]
-    
-    @AppStorage("NOME_USUARIO") var nomeUsuario: String = ""
-    @AppStorage("NASCIMENTO_USUARIO") var nascimentoUsuario: String = ""
-    
-    var logado: Bool {
-        !nomeUsuario.isEmpty && !nascimentoUsuario.isEmpty
-    }
-    
+    @State private var usoCheck: Bool = false
+    @State private var privacidadeCheck: Bool = false
+    @State private var isShowingSheet = false
+
     var body: some View {
-        if logado {
-            DecisionView() // Navigate to the logged-in view if user data is present
-        } else {
-            NavigationView {
-                VStack(alignment: .leading) {
-                    Text("Bem-vindo ao \nMoviEmotion!")
-                        .font(.title)
-                    
-                    Spacer()
-                    
-                    Text("blablabla")
-                    
-                    Spacer()
-                    
-                    Text("Aceite os termos abaixo antes \nde prosseguir:")
-                        .font(.system(size: 20))
-                    
-                    List($opcoes) { $opcao in
-                        HStack {
-                            Image(systemName: opcao.marcado ? "checkmark.square" : "square")
-                                .onTapGesture {
-                                    opcao.marcado.toggle()
-                                }
-                            Text(opcao.texto)
-                                .underline()
-                        }
-                    }
-                    .frame(height: 150)
-                    
-                    NavigationLink(destination: UserInfosView()) {
-                        Text("Próximo")
-                        Image(systemName: "arrow.right")
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .offset(x: 250)
+        NavigationView {
+            VStack (alignment: .leading){
+                Spacer()
+                Text("Bem-vindo ao \nMoviEmotion!")
+                    .font(.title)
+                
+                Spacer()
+                
+                Text("Escolha sua emoção e encontre o filme perfeito para você.")
+                    .font(.system(size: 18))
+                
+                Spacer()
+                    .frame(height: 20)
+                
+                Text("Vamos começar?")
+                
+                Spacer()
+                
+                Text("Aceite os termos abaixo antes \nde prosseguir:")
+                    .font(.system(size: 20))
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                HStack {
+                    Image(systemName: usoCheck ? "checkmark.circle" : "circle")
+                            .onTapGesture {
+                                usoCheck.toggle()
+                            }
+                        
+                    TermsOfUseView()
                 }
-                .padding(30)
+                
+                HStack {
+                    Image(systemName: privacidadeCheck ? "checkmark.circle" : "circle")
+                        .onTapGesture {
+                            privacidadeCheck.toggle()
+                        }
+                    
+                    PrivacyView()
+                }
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                NavigationLink(destination: UserInfosView()) {
+                    Text("Próximo")
+                    Image(systemName: "arrow.right")
+                }
+                .buttonStyle(PlainButtonStyle())
+                .offset(x: 200)
+                .disabled(usoCheck == false)
+                .disabled(privacidadeCheck == false)
             }
+            .padding(30)
         }
     }
 }
-
 
 #Preview {
     WelcomeView()
