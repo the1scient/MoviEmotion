@@ -1,17 +1,44 @@
-//
-//  MoviEmotionApp.swift
-//  MoviEmotion
-//
-//  Created by GUILHERME FAGGION FABBRI on 26/08/24.
-//
-
 import SwiftUI
+import SDWebImageSwiftUI
 
 @main
 struct MoviEmotionApp: App {
+    @State private var isSplashScreenActive = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isSplashScreenActive {
+                SplashScreen(isSplashScreenActive: $isSplashScreenActive)
+            } else {
+                ContentView()
+            }
+        }
+    }
+}
+
+struct SplashScreen: View {
+    @Binding var isSplashScreenActive: Bool
+    let gifURL = URL(string: "https://s1.ezgif.com/tmp/ezgif-1-d2478cb5b3.gif") // Substitua pela URL do seu GIF
+    
+    var body: some View {
+        ZStack {
+            Color.white.ignoresSafeArea()
+            
+            if let url = gifURL {
+                WebImage(url: url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 310, height: 310)
+                    .clipped()
+            }
+        }
+        .onAppear {
+            // Temporizador para redirecionar após o GIF
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                withAnimation {
+                    isSplashScreenActive = false
+                }
+            }
         }
     }
 }
@@ -22,12 +49,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if isFirstLaunch {
-                // Exibe WelcomeView apenas na primeira vez
                 WelcomeView(isFirstLaunch: $isFirstLaunch)
             } else {
-                // Exibe DecisionView nas outras vezes
                 DecisionView()
             }
         }
     }
 }
+

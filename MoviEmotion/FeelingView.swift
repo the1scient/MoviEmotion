@@ -60,7 +60,7 @@ struct FeelingView: View {
                                                  Image(emotions[index].imageName)
                                                      .resizable()
                                                      .scaledToFit()
-                                                     .frame(width: 50, height: 50)
+                                                     .frame(width: 75, height: 75)
                                                      .clipShape(Circle())
                                              }
                                          }

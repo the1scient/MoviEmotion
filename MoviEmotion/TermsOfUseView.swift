@@ -94,18 +94,7 @@ struct TermsOfUseView: View {
                         
                         Spacer().frame(height: 25)
                         
-                        Text("8. Atribuição da Fonte de Dados")
-                            .bold()
-                        
-                        Spacer()
-                            .frame(height: 10)
-                        
-                        Text("Para usar os dados fornecidos pelo MoviEmotion, você deve atribuir a fonte dos dados como JustWatch. Se encontrarmos qualquer uso que não esteja em conformidade com estes termos, reservamo-nos o direito de revogar o acesso à API.")
-                            .font(.system(size: 15))
-                        
-                        Spacer().frame(height: 25)
-                        
-                        Text("9. Modificações")
+                        Text("8. Modificações")
                             .bold()
                         
                         Spacer()
@@ -116,7 +105,7 @@ struct TermsOfUseView: View {
                         
                         Spacer().frame(height: 25)
                         
-                        Text("10. Limitação de Responsabilidade")
+                        Text("9. Limitação de Responsabilidade")
                             .bold()
                         
                         Spacer()

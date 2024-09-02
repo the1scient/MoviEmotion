@@ -27,7 +27,7 @@ struct PrivacyMenu: View {
                 Spacer()
                     .frame(height: 10)
                 
-                Text("Coletamos as seguintes informações:\n\nNome do Usuário: Para personalizar recomendações.\n\nData de Nascimento: Para filtrar conteúdo +18.\n\nDados de Local Storage: Para melhorar a experiência do usuário e manter as preferências.")
+                Text("Coletamos as seguintes informações:\n\nNome do Usuário: Para personalizar recomendações.\n\nData de Nascimento: Para filtrar conteúdo +18.\n\nDados de Local Storage: Para melhorar a experiência do usuário.")
                     .font(.system(size: 15))
                 
                 Spacer().frame(height: 25)
@@ -61,17 +61,6 @@ struct PrivacyMenu: View {
                     .frame(height: 10)
                 
                 Text("Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre quaisquer alterações significativas e seu uso contínuo do aplicativo após essas alterações constitui sua aceitação da nova política.")
-                    .font(.system(size: 15))
-                    
-                Spacer().frame(height: 25)
-                
-                Text("5. Contato")
-                    .bold()
-                
-                Spacer()
-                    .frame(height: 10)
-                
-                Text("Se você tiver alguma dúvida ou preocupação sobre esta Política de Privacidade, entre em contato conosco pelo e-mail: suporte@moviemotion.com.")
                     .font(.system(size: 15))
             }
                 .padding(30)

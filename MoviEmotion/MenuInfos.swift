@@ -13,34 +13,34 @@ struct MenuInfos: View {
     @State private var selectedDestination: String?
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Menu {
-                    Button(action: {
-                        selectedDestination = "Sobre o App"
-                    }) {
-                        Label("Sobre", systemImage: "info.circle")
-                    }
-
-                    Button(action: {
-                        selectedDestination = "Termos de Uso"
-                    }) {
-                        Label("Termos de Uso", systemImage: "doc.text")
-                    }
-
-                    Button(action: {
-                        selectedDestination = "Política de Privacidade"
-                    }) {
-                        Label("Política de Privacidade", systemImage: "lock.shield")
-                    }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                        .font(.title)
+        VStack {
+            Menu {
+                Button(action: {
+                    selectedDestination = "Sobre o App"
+                }) {
+                    Label("Sobre", systemImage: "info.circle")
                 }
-                
-                NavigationLink(destination: destinationView, tag: selectedDestination ?? "", selection: $selectedDestination) {
-                    EmptyView()
+
+                Button(action: {
+                    selectedDestination = "Termos de Uso"
+                }) {
+                    Label("Termos de Uso", systemImage: "doc.text")
                 }
+
+                Button(action: {
+                    selectedDestination = "Política de Privacidade"
+                }) {
+                    Label("Política de Privacidade", systemImage: "lock.shield")
+                }
+            } label: {
+                Image(systemName: "ellipsis.circle")
+                    .resizable()
+                    .frame(width: 23, height: 23)
+                    .font(.title)
+            }
+            
+            NavigationLink(destination: destinationView, tag: selectedDestination ?? "", selection: $selectedDestination) {
+                EmptyView()
             }
         }
     }
@@ -48,7 +48,7 @@ struct MenuInfos: View {
     @ViewBuilder
     private var destinationView: some View {
         switch selectedDestination {
-        case "Sobre":
+        case "Sobre o App":
             AppInfoView()
         case "Termos de Uso":
             TermsMenu()

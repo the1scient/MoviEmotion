@@ -52,7 +52,6 @@ struct WelcomeView: View {
                         .onTapGesture {
                             privacidadeCheck.toggle()
                         }
-                    
                     PrivacyView()
                 }
                 

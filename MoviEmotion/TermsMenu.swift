@@ -79,21 +79,10 @@ struct TermsMenu: View {
                 
                 Text("O MoviEmotion utiliza a API TMDB para obter dados e imagens de filmes. O uso da API está sujeito aos termos e condições da TMDB, e o MoviEmotion não é responsável por quaisquer alterações nas políticas ou serviços da TMDB.\n\nTodos os direitos de propriedade intelectual relacionados ao aplicativo MoviEmotion, incluindo imagens e dados de filmes fornecidos através da API TMDB, pertencem aos respectivos proprietários e são protegidos pelas leis de direitos autorais e outras leis de propriedade intelectual.")
                     .font(.system(size: 15))
-                
+            
                 Spacer().frame(height: 25)
                 
-                Text("8. Atribuição da Fonte de Dados")
-                    .bold()
-                
-                Spacer()
-                    .frame(height: 10)
-                
-                Text("Para usar os dados fornecidos pelo MoviEmotion, você deve atribuir a fonte dos dados como JustWatch. Se encontrarmos qualquer uso que não esteja em conformidade com estes termos, reservamo-nos o direito de revogar o acesso à API.")
-                    .font(.system(size: 15))
-                
-                Spacer().frame(height: 25)
-                
-                Text("9. Modificações")
+                Text("8. Modificações")
                     .bold()
                 
                 Spacer()
@@ -104,7 +93,7 @@ struct TermsMenu: View {
                 
                 Spacer().frame(height: 25)
                 
-                Text("10. Limitação de Responsabilidade")
+                Text("9. Limitação de Responsabilidade")
                     .bold()
                 
                 Spacer()
