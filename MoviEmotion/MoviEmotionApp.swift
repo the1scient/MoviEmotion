@@ -11,7 +11,24 @@ import SwiftUI
 struct MoviEmotionApp: App {
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            ContentView()
         }
     }
 }
+
+struct ContentView: View {
+    @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = true
+    
+    var body: some View {
+        NavigationView {
+            if isFirstLaunch {
+                // Exibe WelcomeView apenas na primeira vez
+                WelcomeView(isFirstLaunch: $isFirstLaunch)
+            } else {
+                // Exibe DecisionView nas outras vezes
+                DecisionView()
+            }
+        }
+    }
+}
+

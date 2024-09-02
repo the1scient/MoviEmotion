@@ -2,7 +2,6 @@ import SwiftUI
 
 struct DecisionView: View {
     var body: some View {
-        NavigationView {
             VStack {
                 Text("Recomendações \na partir de:")
                     .font(.system(size: 25))
@@ -59,7 +58,6 @@ struct DecisionView: View {
             }
         }
     }
-}
 
 #Preview {
     DecisionView()

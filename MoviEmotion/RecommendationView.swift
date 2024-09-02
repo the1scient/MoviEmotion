@@ -4,7 +4,7 @@ struct RecommendationView: View {
     @StateObject private var viewModel: MovieViewModel
     @State private var showSheet = false
     @State private var selectedMovie: Movie?
-    @AppStorage("NOME_USUARIO") var nomeUsuario: String = ""
+    @State private var userName: String = UserDefaults.standard.string(forKey: "UserName") ?? "Usuário"
 
     
     init(categorie: String) {
@@ -16,12 +16,15 @@ struct RecommendationView: View {
     var body: some View {
         VStack {
             HStack{
-                Text("Para \(nomeUsuario)")
+                Text("Para \(userName)")
                     .font(.system(size: 25))
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
                     .padding()
                     .padding(.horizontal, 5)
+                    .lineLimit(1) // Limita o texto a uma linha
+                    .truncationMode(.tail) // Trunca o texto ao final, se necessário
+                    .minimumScaleFactor(0.5)
             }
 
             if let firstMovie = viewModel.movies.first {
@@ -104,6 +107,10 @@ struct RecommendationView: View {
                 .padding(.horizontal)
             }
             Spacer()
+        }
+        .onAppear {
+            // Atualiza o userName quando a tela aparece
+            userName = UserDefaults.standard.string(forKey: "UserName") ?? "Usuário"
         }
     }
 }

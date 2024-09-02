@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @Binding var isFirstLaunch: Bool
     @State private var usoCheck: Bool = false
     @State private var privacidadeCheck: Bool = false
     @State private var isShowingSheet = false
@@ -58,7 +59,7 @@ struct WelcomeView: View {
                 Spacer()
                     .frame(height: 50)
                 
-                NavigationLink(destination: UserInfosView()) {
+                NavigationLink(destination: UserInfosView(isFirstLaunch: $isFirstLaunch)) {
                     Text("Próximo")
                     Image(systemName: "arrow.right")
                 }
@@ -73,5 +74,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView()
+    WelcomeView(isFirstLaunch: .constant(true))
 }
