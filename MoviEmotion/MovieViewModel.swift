@@ -18,22 +18,25 @@ class MovieViewModel: ObservableObject {
             return
         }
         
+        let age = UserDefaults.standard.integer(forKey: "UserAge")
+        let includeAdult = age >= 18 ? "true" : "false"
+        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "include_adult", value: "false"),
+            URLQueryItem(name: "include_adult", value: includeAdult),
             URLQueryItem(name: "include_video", value: "false"),
             URLQueryItem(name: "language", value: "pt-BR"),
             URLQueryItem(name: "page", value: "1"),
-            URLQueryItem(name: "sort_by", value: "revenue.desc"),
+            URLQueryItem(name: "sort_by", value: "vote_count.desc"),
             URLQueryItem(name: "region", value: "BR"),
             URLQueryItem(name: "with_genres", value: "\(categorie)"),
         ]
         components.queryItems = queryItems
         
         guard let finalURL = components.url else {
-                   self.error = NSError(domain: "", code: 101, userInfo: [NSLocalizedDescriptionKey: "Failed to create final URL"])
-                   return
-               }
+            self.error = NSError(domain: "", code: 101, userInfo: [NSLocalizedDescriptionKey: "Failed to create final URL"])
+            return
+        }
         
         var request = URLRequest(url: finalURL)
         request.httpMethod = "GET"
@@ -44,21 +47,21 @@ class MovieViewModel: ObservableObject {
         ]
         
         URLSession.shared.dataTaskPublisher(for: request)
-                .map(\.data)
-                .decode(type: MovieResponse.self, decoder: JSONDecoder())
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        self.error = error
-                        print("Error: \(error.localizedDescription)")
-                        print(completion)
-                    }
-                }, receiveValue: { [weak self] response in
-                    self?.movies = response.results
-                })
-                .store(in: &cancellables)
+            .map(\.data)
+            .decode(type: MovieResponse.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self.error = error
+                    print("Error: \(error.localizedDescription)")
+                    print(completion)
+                }
+            }, receiveValue: { [weak self] response in
+                self?.movies = response.results
+            })
+            .store(in: &cancellables)
     }
 }

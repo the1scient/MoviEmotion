@@ -2,7 +2,6 @@ import SwiftUI
 
 struct DecisionView: View {
     var body: some View {
-        NavigationView { // Envolvendo toda a DecisionView em uma NavigationView
             ZStack {
                 MenuInfos()
                     .offset(CGSize(width: 170.0, height: -380.0))
@@ -68,7 +67,6 @@ struct DecisionView: View {
             }
         }
     }
-}
 
 #Preview {
     DecisionView()

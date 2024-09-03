@@ -2,8 +2,8 @@ import SwiftUI
 
 struct UserInfosView: View {
     @Binding var isFirstLaunch: Bool
-    @State private var nome: String = ""
-    @State private var dataNascimento = Date()
+    @State private var name: String = ""
+    @State private var dateOfBirth = Date()
     @Environment(\.colorScheme) var colorScheme
     
     private var maxData: Date {
@@ -15,9 +15,9 @@ struct UserInfosView: View {
         formatter.dateFormat = "dd/MM/yy"
         return formatter
     }()
-
+    
     var body: some View {
-        ScrollView { 
+        ScrollView {
             VStack(alignment: .leading) {
                 Spacer()
                 
@@ -33,8 +33,8 @@ struct UserInfosView: View {
                 Spacer()
                     .frame(height: 20)
                 
-                TextField("Digite um nome", text: $nome)
-                    .frame(width: 348, height: 40)
+                TextField("Digite um nome", text: $name)
+                    .frame(width: .infinity, height: 40)
                     .multilineTextAlignment(.center)
                     .background(Color.gray)
                     .foregroundColor(.white)
@@ -45,16 +45,18 @@ struct UserInfosView: View {
                 
                 Text("Data de Nascimento:")
                     .font(.system(size: 18))
-                    DatePicker("Date", selection: $dataNascimento, in: ...maxData, displayedComponents: .date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .frame(width: .infinity, height: 330,alignment: .center)
+                DatePicker("Date", selection: $dateOfBirth, in: ...maxData, displayedComponents: .date)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .frame(width: .infinity, height: 330, alignment: .center)
                 
                 Spacer()
                     .frame(height: 30)
                 
                 Button(action: {
-                    if !nome.isEmpty {
-                        UserDefaults.standard.set(nome, forKey: "UserName")
+                    if !name.isEmpty {
+                        UserDefaults.standard.set(name, forKey: "UserName")
+                        let age = calculateAge(from: dateOfBirth)
+                        UserDefaults.standard.set(age, forKey: "UserAge") // Salva a idade no UserDefaults
                         isFirstLaunch = false
                     }
                 }) {
@@ -66,13 +68,19 @@ struct UserInfosView: View {
                         .cornerRadius(20)
 
                 }
-                .disabled(nome.isEmpty)
+                .disabled(name.isEmpty)
                 
                 
             }
             .padding(20)
         }
-        //.navigationBarBackButtonHidden(true) // Esconde o botão "Back"
+    }
+    
+
+    private func calculateAge(from birthDate: Date) -> Int {
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: birthDate, to: Date())
+        return ageComponents.year ?? 0
     }
 }
 

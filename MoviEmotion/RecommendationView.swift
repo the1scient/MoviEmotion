@@ -5,7 +5,6 @@ struct RecommendationView: View {
     @State private var showSheet = false
     @State private var selectedMovie: Movie?
     @State private var userName: String = UserDefaults.standard.string(forKey: "UserName") ?? "Usuário"
-
     
     init(categorie: String) {
         _viewModel = StateObject(wrappedValue: MovieViewModel(categorie: "\(categorie)"))
@@ -15,15 +14,15 @@ struct RecommendationView: View {
 
     var body: some View {
         VStack {
-            HStack{
+            HStack {
                 Text("Para \(userName)")
                     .font(.system(size: 25))
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leadingFirstTextBaseline)
                     .padding()
                     .padding(.horizontal, 5)
-                    .lineLimit(1) // Limita o texto a uma linha
-                    .truncationMode(.tail) // Trunca o texto ao final, se necessário
+                    .lineLimit(1)
+                    .truncationMode(.tail)
                     .minimumScaleFactor(0.5)
             }
 
@@ -59,14 +58,11 @@ struct RecommendationView: View {
                     MovieView(movieInfo: movie)
                         .id(UUID())
                 }
-
-
-
             }
 
             Spacer()
             Text("Outras recomendações:")
-                .font(.system(size: 15,weight: .semibold))
+                .font(.system(size: 15, weight: .semibold))
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 4)
@@ -74,7 +70,7 @@ struct RecommendationView: View {
 
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(viewModel.movies.dropFirst(), id: \.title) { movie in
+                    ForEach(viewModel.movies.dropFirst(), id: \.id) { movie in
                         Button(action: {
                             selectedMovie = movie
                             showSheet.toggle()
@@ -109,12 +105,11 @@ struct RecommendationView: View {
             Spacer()
         }
         .onAppear {
-            // Atualiza o userName quando a tela aparece
             userName = UserDefaults.standard.string(forKey: "UserName") ?? "Usuário"
         }
     }
 }
 
 #Preview {
-    RecommendationView(categorie: "12")
+    RecommendationView(categorie: "37")
 }

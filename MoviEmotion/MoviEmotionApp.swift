@@ -33,7 +33,6 @@ struct SplashScreen: View {
             }
         }
         .onAppear {
-            // Temporizador para redirecionar após o GIF
             DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                 withAnimation {
                     isSplashScreenActive = false

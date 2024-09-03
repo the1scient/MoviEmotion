@@ -39,7 +39,7 @@ struct WelcomeView: View {
                     .frame(height: 50)
                 
                 HStack {
-                    Image(systemName: usoCheck ? "checkmark.circle" : "circle")
+                    Image(systemName: usoCheck ? "checkmark.circle" : "circle").font(.system(size: 21))
                             .onTapGesture {
                                 usoCheck.toggle()
                             }
@@ -48,7 +48,7 @@ struct WelcomeView: View {
                 }
                 
                 HStack {
-                    Image(systemName: privacidadeCheck ? "checkmark.circle" : "circle")
+                    Image(systemName: privacidadeCheck ? "checkmark.circle" : "circle").font(.system(size: 21))
                         .onTapGesture {
                             privacidadeCheck.toggle()
                         }

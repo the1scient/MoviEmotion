@@ -11,10 +11,10 @@ struct WantToFeelView: View {
     let emotions = [
         EmotionCategory(id: "10749", name: "Amor", genre: "Romance", startColor: Color(red: 0.9, green: 0.3, blue: 0.3), endColor: Color(red: 0.7, green: 0.1, blue: 0.1), imageName: "Amor"),
         EmotionCategory(id: "18", name: "Tristeza", genre: "Drama", startColor: Color(red: 0.5, green: 0.1, blue: 0.1), endColor: Color(red: 0.4, green: 0.0, blue: 0.0), imageName: "Tristeza"),
-        EmotionCategory(id: "27", name: "Medo", genre: "Terror", startColor: Color(red: 0.5, green: 0.2, blue: 0.2), endColor: Color(red: 0.4, green: 0.0, blue: 0.0), imageName: "Medo"),
+        EmotionCategory(id: "27,53", name: "Medo", genre: "Terror", startColor: Color(red: 0.5, green: 0.2, blue: 0.2), endColor: Color(red: 0.4, green: 0.0, blue: 0.0), imageName: "Medo"),
         EmotionCategory(id: "35", name: "Alegria", genre: "Comédia", startColor: Color(red: 0.9, green: 0.8, blue: 0.2), endColor: Color(red: 0.8, green: 0.6, blue: 0.0), imageName: "Alegria"),
         EmotionCategory(id: "878", name: "Curiosidade", genre: "Ficção Científica", startColor: Color(red: 0.3, green: 0.5, blue: 0.5), endColor: Color(red: 0.2, green: 0.4, blue: 0.3), imageName: "Curiosidade"),
-        EmotionCategory(id: "99", name: "Tédio", genre: "Documentário", startColor: Color(red: 0.7, green: 0.7, blue: 0.7), endColor: Color(red: 0.6, green: 0.6, blue: 0.6), imageName: "Tedio")
+        EmotionCategory(id: "99", name: "Calmaria", genre: "Documentário", startColor: Color(red: 0.7, green: 0.7, blue: 0.7), endColor: Color(red: 0.6, green: 0.6, blue: 0.6), imageName: "Tedio")
     ]
     
     var body: some View {

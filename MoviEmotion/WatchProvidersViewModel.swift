@@ -46,7 +46,6 @@ class WatchProvidersViewModel: ObservableObject {
                     print("Error: \(error.localizedDescription)")
                 }
             }, receiveValue: { [weak self] response in
-                // Filtra apenas os provedores do Brasil (ISO 3166-1: BR)
                 self?.watchProviders = response.results["BR"]
             })
             .store(in: &cancellables)
