@@ -3,39 +3,31 @@ import SDWebImageSwiftUI
 
 @main
 struct MoviEmotionApp: App {
-    @State private var isSplashScreenActive = true
+    @State var isActive: Bool = false
     
     var body: some Scene {
         WindowGroup {
-            if isSplashScreenActive {
-                SplashScreen(isSplashScreenActive: $isSplashScreenActive)
-            } else {
-                ContentView()
-            }
+            SplashScreen(isActive: $isActive)
         }
     }
 }
 
 struct SplashScreen: View {
-    @Binding var isSplashScreenActive: Bool
-    let gifURL = URL(string: "https://s1.ezgif.com/tmp/ezgif-1-d2478cb5b3.gif") // Substitua pela URL do seu GIF
-    
+    @Binding var isActive: Bool
+
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
-            
-            if let url = gifURL {
-                WebImage(url: url)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 310, height: 310)
-                    .clipped()
+            if self.isActive {
+                ContentView()
+            } else {
+                AnimatedImageView()
+                    .frame(width: 1100, height: 1100)
             }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.7) {
                 withAnimation {
-                    isSplashScreenActive = false
+                    self.isActive = true
                 }
             }
         }
@@ -55,4 +47,3 @@ struct ContentView: View {
         }
     }
 }
-

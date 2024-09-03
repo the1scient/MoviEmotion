@@ -15,6 +15,7 @@
 		541B94E12C826BB300E947D6 /* TermsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541B94E02C826BB300E947D6 /* TermsMenu.swift */; };
 		541B94E32C826C5B00E947D6 /* TermsOfUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541B94E22C826C5B00E947D6 /* TermsOfUseView.swift */; };
 		541B94E52C826CC800E947D6 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541B94E42C826CC800E947D6 /* PrivacyView.swift */; };
+		542A730E2C87A32C00A42A9B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A730D2C87A32C00A42A9B /* Splash.swift */; };
 		54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */; };
 		54D80B392C865DB000140B99 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 54D80B382C865DB000140B99 /* SDWebImageSwiftUI */; };
 		CE4B59082C810FC200D0A4B5 /* ClassificacaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */; };
@@ -22,12 +23,9 @@
 		CEC9B6352C7FB9A5007B43FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9B6342C7FB9A5007B43FA /* Assets.xcassets */; };
 		CEC9B6392C7FB9A5007B43FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9B6382C7FB9A5007B43FA /* Preview Assets.xcassets */; };
 		CEC9B64C2C7FB9B3007B43FA /* UserInfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6402C7FB9B3007B43FA /* UserInfosView.swift */; };
-		CEC9B64D2C7FB9B3007B43FA /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */; };
-		CEC9B64E2C7FB9B3007B43FA /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */; };
 		CEC9B64F2C7FB9B3007B43FA /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6432C7FB9B3007B43FA /* MovieModel.swift */; };
 		CEC9B6502C7FB9B3007B43FA /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6442C7FB9B3007B43FA /* MovieViewModel.swift */; };
 		CEC9B6512C7FB9B3007B43FA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6452C7FB9B3007B43FA /* WelcomeView.swift */; };
-		CEC9B6522C7FB9B3007B43FA /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6462C7FB9B3007B43FA /* CategoriesViewModel.swift */; };
 		CEC9B6532C7FB9B3007B43FA /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6472C7FB9B3007B43FA /* FeelingView.swift */; };
 		CEC9B6542C7FB9B3007B43FA /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6482C7FB9B3007B43FA /* RecommendationView.swift */; };
 		CEC9B6552C7FB9B3007B43FA /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9B6492C7FB9B3007B43FA /* DecisionView.swift */; };
@@ -44,6 +42,7 @@
 		541B94E02C826BB300E947D6 /* TermsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsMenu.swift; sourceTree = "<group>"; };
 		541B94E22C826C5B00E947D6 /* TermsOfUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseView.swift; sourceTree = "<group>"; };
 		541B94E42C826CC800E947D6 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		542A730D2C87A32C00A42A9B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		54A3D29B2C7FC21F004CE72C /* MoviEmotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviEmotionApp.swift; sourceTree = "<group>"; };
 		CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificacaoViewModel.swift; sourceTree = "<group>"; };
 		CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationModel.swift; sourceTree = "<group>"; };
@@ -52,12 +51,9 @@
 		CEC9B6362C7FB9A5007B43FA /* MoviEmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoviEmotion.entitlements; sourceTree = "<group>"; };
 		CEC9B6382C7FB9A5007B43FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEC9B6402C7FB9B3007B43FA /* UserInfosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfosView.swift; sourceTree = "<group>"; };
-		CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		CEC9B6432C7FB9B3007B43FA /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		CEC9B6442C7FB9B3007B43FA /* MovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		CEC9B6452C7FB9B3007B43FA /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		CEC9B6462C7FB9B3007B43FA /* CategoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		CEC9B6472C7FB9B3007B43FA /* FeelingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
 		CEC9B6482C7FB9B3007B43FA /* RecommendationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		CEC9B6492C7FB9B3007B43FA /* DecisionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
@@ -99,9 +95,6 @@
 				CE4B59092C81100C00D0A4B5 /* ClassificationModel.swift */,
 				CE4B59072C810FC200D0A4B5 /* ClassificacaoViewModel.swift */,
 				CEC9B6572C7FBA9D007B43FA /* MovieView.swift */,
-				CEC9B6422C7FB9B3007B43FA /* CategoriesModel.swift */,
-				CEC9B6412C7FB9B3007B43FA /* CategoriesView.swift */,
-				CEC9B6462C7FB9B3007B43FA /* CategoriesViewModel.swift */,
 				CEC9B6492C7FB9B3007B43FA /* DecisionView.swift */,
 				CEC9B64A2C7FB9B3007B43FA /* WantToFeelView.swift */,
 				CEC9B6472C7FB9B3007B43FA /* FeelingView.swift */,
@@ -122,6 +115,7 @@
 				541B94DE2C826B9A00E947D6 /* PrivacyMenu.swift */,
 				541B94E02C826BB300E947D6 /* TermsMenu.swift */,
 				541B94E42C826CC800E947D6 /* PrivacyView.swift */,
+				542A730D2C87A32C00A42A9B /* Splash.swift */,
 			);
 			path = MoviEmotion;
 			sourceTree = "<group>";
@@ -214,18 +208,16 @@
 				54A3D29C2C7FC21F004CE72C /* MoviEmotionApp.swift in Sources */,
 				CEC9B64F2C7FB9B3007B43FA /* MovieModel.swift in Sources */,
 				CEC9B6552C7FB9B3007B43FA /* DecisionView.swift in Sources */,
-				CEC9B6522C7FB9B3007B43FA /* CategoriesViewModel.swift in Sources */,
 				CEC9B6502C7FB9B3007B43FA /* MovieViewModel.swift in Sources */,
 				CEC9B6512C7FB9B3007B43FA /* WelcomeView.swift in Sources */,
 				541B94D92C82464800E947D6 /* WatchProvidersViewModel.swift in Sources */,
-				CEC9B64E2C7FB9B3007B43FA /* CategoriesModel.swift in Sources */,
+				542A730E2C87A32C00A42A9B /* Splash.swift in Sources */,
 				CEC9B6532C7FB9B3007B43FA /* FeelingView.swift in Sources */,
 				CEC9B6582C7FBA9D007B43FA /* MovieView.swift in Sources */,
 				541B94E52C826CC800E947D6 /* PrivacyView.swift in Sources */,
 				541B94D72C82449000E947D6 /* WatchProvidersModel.swift in Sources */,
 				541B94DB2C826B0F00E947D6 /* AppInfoView.swift in Sources */,
 				CE4B590A2C81100C00D0A4B5 /* ClassificationModel.swift in Sources */,
-				CEC9B64D2C7FB9B3007B43FA /* CategoriesView.swift in Sources */,
 				541B94DF2C826B9A00E947D6 /* PrivacyMenu.swift in Sources */,
 				CEC9B6562C7FB9B3007B43FA /* WantToFeelView.swift in Sources */,
 				541B94E32C826C5B00E947D6 /* TermsOfUseView.swift in Sources */,
