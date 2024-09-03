@@ -1,5 +1,4 @@
 import SwiftUI
-import SDWebImageSwiftUI
 
 @main
 struct MoviEmotionApp: App {
