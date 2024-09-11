@@ -33,12 +33,17 @@ struct UserInfosView: View {
                 Spacer()
                     .frame(height: 20)
                 
-                TextField("Digite um nome", text: $name)
+                TextField("", text: $name, prompt:
+                            Text("Digite um nome").foregroundColor(.gray)
+                )
                     .frame(width: .infinity, height: 40)
                     .multilineTextAlignment(.center)
-                    .background(Color.gray)
                     .foregroundColor(.white)
-                    .cornerRadius(20)
+                    .overlay (
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray)
+                    )
+                    
                 
                 Spacer()
                     .frame(height: 40)
@@ -52,23 +57,31 @@ struct UserInfosView: View {
                 Spacer()
                     .frame(height: 30)
                 
-                Button(action: {
-                    if !name.isEmpty {
-                        UserDefaults.standard.set(name, forKey: "UserName")
-                        let age = calculateAge(from: dateOfBirth)
-                        UserDefaults.standard.set(age, forKey: "UserAge") // Salva a idade no UserDefaults
-                        isFirstLaunch = false
-                    }
-                }) {
-                    Text("Concluir")
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .foregroundColor(.white)
-                        .background(.gray)
-                        .cornerRadius(20)
+                NavigationLink(destination: DecisionView()) {
+                    
+                    
+                    Button(action: {
+                        if !name.isEmpty {
+                            UserDefaults.standard.set(name, forKey: "UserName")
+                            let age = calculateAge(from: dateOfBirth)
+                            UserDefaults.standard.set(age, forKey: "UserAge") // Salva a idade no UserDefaults
+                            isFirstLaunch = false
+                        }
+                        
+                    }) {
+                        Text("Concluir")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 10)
+                            .foregroundColor(.white)
+                            .background(.gray)
+                            .cornerRadius(20)
 
+                    }
+                    
                 }
-                .disabled(name.isEmpty)
+                
+         
+               
                 
                 
             }
