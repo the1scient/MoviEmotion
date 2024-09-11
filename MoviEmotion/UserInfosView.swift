@@ -38,7 +38,6 @@ struct UserInfosView: View {
                 )
                     .frame(width: .infinity, height: 40)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
                     .overlay (
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.gray)

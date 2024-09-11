@@ -18,6 +18,7 @@ struct TermsOfUseView: View {
             }) {
                 Text("Termos de Uso")
                     .underline()
+                    
             }
             .sheet(isPresented: $isShowingSheet,
                    onDismiss: didDismiss) {

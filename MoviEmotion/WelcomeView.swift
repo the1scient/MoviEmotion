@@ -16,7 +16,6 @@ struct WelcomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                
                 Image("Fundo")
                     .resizable()
                     .ignoresSafeArea()
@@ -37,11 +36,12 @@ struct WelcomeView: View {
                     Text("Bem-vindo ao \nMoviEmotion!")
                         .font(.title)
                         .bold()
-                    
+                        .foregroundColor(.white)
                     Spacer()
                     
                     Text("Escolha sua emoção e encontre o filme perfeito para você.")
                         .font(.system(size: 20))
+                        .foregroundColor(.white)
                     
                     Spacer()
                         .frame(height: 20)
@@ -49,12 +49,14 @@ struct WelcomeView: View {
                     Text("Vamos começar?")
                         .font(.system(size: 20))
                         .bold()
+                        .foregroundColor(.white)
                     
                     Spacer()
                     
                     Text("Por favor, aceite os termos abaixo antes de prosseguir:")
                         .font(.system(size: 20))
                         .bold()
+                        .foregroundColor(.white)
                     
                     Spacer()
                         .frame(height: 50)
@@ -64,33 +66,40 @@ struct WelcomeView: View {
                             .onTapGesture {
                                 usoCheck.toggle()
                             }
+                            .foregroundColor(.white)
                         
                         TermsOfUseView()
                     }
+                    
                     
                     HStack {
                         Image(systemName: privacidadeCheck ? "checkmark.circle" : "circle").font(.system(size: 21))
                             .onTapGesture {
                                 privacidadeCheck.toggle()
                             }
+                            .foregroundColor(.white)
                         PrivacyView()
                     }
+                    
                     
                     Spacer()
                         .frame(height: 50)
                     
                     NavigationLink(destination: UserInfosView(isFirstLaunch: $isFirstLaunch)) {
                         Text("Próximo")
+                            .foregroundColor(.white)
                         Image(systemName: "arrow.right")
+                            .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
                     .offset(x: 200)
                     .disabled(usoCheck == false)
                     .disabled(privacidadeCheck == false)
+                   
                 }
                 .padding(30)
             }
-            .foregroundColor(.white)
+         
         }
     }
 }
