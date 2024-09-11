@@ -22,29 +22,39 @@ struct WelcomeView: View {
                     .ignoresSafeArea()
                 
                 VStack (alignment: .leading){
-                    Image("Icone da Logo")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.bottom, -70)
-                    
+                    HStack {
+                        Image("Logo")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                            .scaledToFit()
+                            .padding(.bottom, -20)
+                            .padding(.leading, -15)
+                        
+                    }
+                
+                    Spacer()
                     
                     Text("Bem-vindo ao \nMoviEmotion!")
                         .font(.title)
+                        .bold()
                     
                     Spacer()
                     
                     Text("Escolha sua emoção e encontre o filme perfeito para você.")
-                        .font(.system(size: 18))
+                        .font(.system(size: 20))
                     
                     Spacer()
                         .frame(height: 20)
                     
                     Text("Vamos começar?")
+                        .font(.system(size: 20))
+                        .bold()
                     
                     Spacer()
                     
-                    Text("Aceite os termos abaixo antes \nde prosseguir:")
+                    Text("Por favor, aceite os termos abaixo antes de prosseguir:")
                         .font(.system(size: 20))
+                        .bold()
                     
                     Spacer()
                         .frame(height: 50)
