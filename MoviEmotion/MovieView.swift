@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MovieView: View {
-    @Environment(\.dismiss) var dismiss  // To dismiss the sheet
+    @Environment(\.dismiss) var dismiss
     @State var movieInfo: Movie
     @StateObject private var classificationViewModel: ClassificationViewModel
     @StateObject private var watchProvidersViewModel: WatchProvidersViewModel
@@ -188,7 +188,7 @@ struct MovieView: View {
 
 #Preview {
     MovieView(movieInfo: Movie(
-        id: 68718,  // Example movie ID from TMDb
+        id: 68718, 
         title: "DivertidaMente 2",
         original_title: "Inside Out 2",
         release_date: "2024-06-14",
