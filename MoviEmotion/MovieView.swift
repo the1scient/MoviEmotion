@@ -17,17 +17,17 @@ struct MovieView: View {
     private var classificationURL: String {
         switch classificationViewModel.classification.lowercased() {
         case "l":
-            return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/l-auto.png/@@images/image"
+            return "L"
         case "10":
-            return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr10-auto.png/@@images/image"
+            return "A10"
         case "12":
-            return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr12-auto.png/@@images/image"
+            return "A12"
         case "14":
-            return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr14-auto.png/@@images/image"
+            return "A14"
         case "16":
-            return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr16-auto.png/@@images/image"
+            return "A16"
         case "18":
-            return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/nr18-auto.png/@@images/image"
+            return "A18"
         default:
             return "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1/simbolos-de-autoclassificacao/l-auto.png/@@images/image"
         }
@@ -60,9 +60,8 @@ struct MovieView: View {
                 }
                 
                 VStack {
-                    Spacer().frame(height: 50) // Espaçamento superior
+                    Spacer().frame(height: 50) 
                     
-                    // Poster Principal
                     AsyncImage(url: URL(string: imageURL + (movieInfo.poster_path ?? ""))) { phase in
                         switch phase {
                         case .empty:
@@ -86,35 +85,19 @@ struct MovieView: View {
                         }
                     }
                     
-                    // Título do Filme - Centralizado
+                    
                     Text("\(movieInfo.title) (\(getYear(from: movieInfo.release_date)))")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding(.top, 10)
                         .multilineTextAlignment(.center)
                     
-                    // Imagem - Centralizada
-                    AsyncImage(url: URL(string: "\(classificationURL)")) { phase in
-                        switch phase {
-                        case .empty:
-                            ProgressView()
-                                .frame(width: 66, height: 66)
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .frame(width: 66, height: 66)
-                                .cornerRadius(5)
-                        case .failure:
-                            Image(systemName: "photo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 66, height: 66)
-                                .foregroundColor(.gray)
-                        @unknown default:
-                            EmptyView()
-                        }
-                    }
-                    .padding(.bottom)
+                    
+                    Image("\(classificationURL)")
+                        .resizable()
+                        .frame(width: 66, height: 66)
+                        .cornerRadius(5)
+                        .padding(.bottom)
                     
                     VStack(alignment: .leading) {
                         Text("Sobre o filme:")
